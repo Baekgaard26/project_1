@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2017.4 (64-bit)
-# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
-# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Wed Jun  6 09:51:36 2018
-# Process ID: 4488
-# Current directory: C:/Users/bruger/Desktop/LC3Zybo2.0/project_1/project_1.runs/synth_1
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Wed Jun  6 10:23:17 2018
+# Process ID: 8200
+# Current directory: C:/Users/Jonat/Documents/GitHub/project_1/project_1.runs/synth_1
 # Command line: vivado.exe -log LC3Zybo_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source LC3Zybo_top.tcl
-# Log file: C:/Users/bruger/Desktop/LC3Zybo2.0/project_1/project_1.runs/synth_1/LC3Zybo_top.vds
-# Journal file: C:/Users/bruger/Desktop/LC3Zybo2.0/project_1/project_1.runs/synth_1\vivado.jou
+# Log file: C:/Users/Jonat/Documents/GitHub/project_1/project_1.runs/synth_1/LC3Zybo_top.vds
+# Journal file: C:/Users/Jonat/Documents/GitHub/project_1/project_1.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source LC3Zybo_top.tcl -notrace

@@ -21,26 +21,26 @@ create_project -in_memory -part xc7z010clg400-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/bruger/Desktop/LC3Zybo2.0/project_1/project_1.cache/wt [current_project]
-set_property parent.project_path C:/Users/bruger/Desktop/LC3Zybo2.0/project_1/project_1.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/Jonat/Documents/GitHub/project_1/project_1.cache/wt [current_project]
+set_property parent.project_path C:/Users/Jonat/Documents/GitHub/project_1/project_1.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo c:/Users/bruger/Desktop/LC3Zybo2.0/project_1/project_1.cache/ip [current_project]
+set_property ip_output_repo c:/Users/Jonat/Documents/GitHub/project_1/project_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  C:/Users/bruger/Desktop/LC3Zybo2.0/lc3_wrapper_tristates.vhd
-  C:/Users/bruger/Desktop/LC3Zybo2.0/lc3_wrapper_multiplexers.vhd
-  C:/Users/bruger/Desktop/LC3Zybo2.0/debounce.vhd
-  C:/Users/bruger/Desktop/LC3Zybo2.0/BtnToggle.vhd
-  C:/Users/bruger/Desktop/LC3Zybo2.0/lc3_debug.vhd
-  C:/Users/bruger/Desktop/LC3Zybo2.0/lc3_computer.vhd
-  C:/Users/bruger/Desktop/LC3Zybo2.0/zybovios_wrapper.vhd
-  C:/Users/bruger/Desktop/LC3Zybo2.0/student_code.vhd
-  C:/Users/bruger/Desktop/LC3Zybo2.0/top.vhd
-  C:/Users/bruger/Desktop/LC3Zybo2.0/project_2.0/project_2.0.srcs/sources_1/new/SinglePortRam4Life.vhd
+  C:/Users/Jonat/Documents/GitHub/lc3_wrapper_tristates.vhd
+  C:/Users/Jonat/Documents/GitHub/lc3_wrapper_multiplexers.vhd
+  C:/Users/Jonat/Documents/GitHub/debounce.vhd
+  C:/Users/Jonat/Documents/GitHub/BtnToggle.vhd
+  C:/Users/Jonat/Documents/GitHub/lc3_debug.vhd
+  C:/Users/Jonat/Documents/GitHub/lc3_computer.vhd
+  C:/Users/Jonat/Documents/GitHub/zybovios_wrapper.vhd
+  C:/Users/Jonat/Documents/GitHub/student_code.vhd
+  C:/Users/Jonat/Documents/GitHub/top.vhd
+  C:/Users/Jonat/Documents/GitHub/project_2.0/project_2.0.srcs/sources_1/new/SinglePortRam4Life.vhd
 }
-read_edif C:/Users/bruger/Desktop/LC3Zybo2.0/lc3.ngc
-read_edif C:/Users/bruger/Desktop/LC3Zybo2.0/ZyboVIO_SE.ngc
+read_edif C:/Users/Jonat/Documents/GitHub/lc3.ngc
+read_edif C:/Users/Jonat/Documents/GitHub/ZyboVIO_SE.ngc
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -49,9 +49,11 @@ read_edif C:/Users/bruger/Desktop/LC3Zybo2.0/ZyboVIO_SE.ngc
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/bruger/Desktop/LC3Zybo2.0/ZYBO.xdc
-set_property used_in_implementation false [get_files C:/Users/bruger/Desktop/LC3Zybo2.0/ZYBO.xdc]
+read_xdc C:/Users/Jonat/Documents/GitHub/ZYBO.xdc
+set_property used_in_implementation false [get_files C:/Users/Jonat/Documents/GitHub/ZYBO.xdc]
 
+set_param ips.enableIPCacheLiteLoad 0
+close [open __synthesis_is_running__ w]
 
 synth_design -top LC3Zybo_top -part xc7z010clg400-1
 
@@ -60,3 +62,5 @@ synth_design -top LC3Zybo_top -part xc7z010clg400-1
 set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef LC3Zybo_top.dcp
 create_report "synth_1_synth_report_utilization_0" "report_utilization -file LC3Zybo_top_utilization_synth.rpt -pb LC3Zybo_top_utilization_synth.pb"
+file delete __synthesis_is_running__
+close [open __synthesis_is_complete__ w]
